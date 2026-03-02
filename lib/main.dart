@@ -3,6 +3,7 @@ import 'package:enemize/models/desafio.dart';
 import 'package:enemize/models/palavras_giradas.dart';
 import 'package:enemize/controller/palavras_giradas_controller.dart';
 import 'package:enemize/models/roleta.dart';
+import 'package:enemize/views/roleta_de_letras.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:wheel_picker/wheel_picker.dart';
@@ -38,7 +39,9 @@ class MainApp extends StatelessWidget {
             children: [
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
-                children: [...List.generate(controller.qtdeRoletas, (index) => RoletaDeLetras(numeroDaRoleta: index))],
+                children: [
+                  ...List.generate(controller.qtdeRoletas, (index) => RoletaDeLetrasNew(numeroDaRoleta: index)),
+                ],
               ),
             ],
           ),

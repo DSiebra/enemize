@@ -13,6 +13,6 @@ class PalavrasGiradasController extends ChangeNotifier {
   Roleta roletaDeLetras(int index) => tabuleiro.roletas[index];
 
   void selecionarLetra({required int coluna, required int indice}) {
-    jogo.tabuleiro.atualizar(coluna, indice);
+    tabuleiro.atualizar(coluna, indice);
   }
 }
