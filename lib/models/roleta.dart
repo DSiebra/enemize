@@ -1,14 +1,38 @@
+import 'package:enemize/models/letra_da_roleta.dart';
+
 class Roleta {
-  List<String> letras;
+  List<String> listDeLetras;
   int index = 0;
-  Roleta(this.letras);
+  late List<LetraDaRoleta> letrasNaRoleta;
+  late List<String> letras;
+  Roleta(this.listDeLetras) {
+    letrasNaRoleta = criarLetrasDoMap();
+    letras = letrasMapeadaseListadas();
+    letras.shuffle();
+  }
 
   String get letraSelecionada => letras[index];
-  int get qtdeDeLetras => letras.length;
+  int get numeroDeLetras => letras.length;
+
+  List<LetraDaRoleta> criarLetrasDoMap() =>
+      mapear().entries.map((e) => LetraDaRoleta(letra: e.key, quantidade: e.value)).toList();
+
+  List<String> letrasMapeadaseListadas() => letrasNaRoleta.map((elemento) => elemento.letra).toList();
+
+  Map<String, int> mapear() {
+    Map<String, int> result = {};
+    for (var letra in listDeLetras) {
+      result.update(letra, (value) => value + 1, ifAbsent: () => 1);
+    }
+    return result;
+  }
+
+  //serve para popular a wheel com todas as letras da lista
+  String letraNaPosicao(int index) => letras[index];
 
   void atualizar(int index) => this.index = index;
 
-  void embaralhar() => letras.shuffle();
-  //serve para popular a wheel com todas as letras da lista
-  String letraNaPosicao(int i) => letras[i];
+  void subtrairLetra() {
+    letrasNaRoleta.firstWhere((e) => e.letra == letraSelecionada).diminuir();
+  }
 }

@@ -1,4 +1,5 @@
 import 'package:enemize/models/card.dart';
+import 'package:enemize/utils/string_extension.dart';
 
 class Charada {
   String pergunta;
@@ -12,5 +13,9 @@ class Charada {
     required this.card,
     required this.disciplina,
     this.respondida = false,
-  });
+  }) {
+    respostaSemAcentos = resposta.normalizar();
+  }
+  String respostaSemAcentos = '';
+  bool conferir(String resposta) => respondida = respostaSemAcentos == resposta;
 }

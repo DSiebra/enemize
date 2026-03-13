@@ -1,18 +1,36 @@
-import 'package:enemize/models/palavras_giradas.dart';
-import 'package:enemize/models/roleta.dart';
-import 'package:enemize/models/tabuleiro.dart';
+import 'package:enemize/models/jogo_palavras_giradas.dart';
 import 'package:flutter/material.dart';
 
 class PalavrasGiradasController extends ChangeNotifier {
   final PalavrasGiradas jogo;
   PalavrasGiradasController(this.jogo);
 
-  Tabuleiro get tabuleiro => jogo.tabuleiro;
-  int get qtdeRoletas => tabuleiro.qtdeDeColunas;
+  int get numeroDeRoletas => jogo.numeroDeRoletas;
 
-  Roleta roletaDeLetras(int index) => tabuleiro.roletas[index];
+  int numeroDeLetras(int roleta) => jogo.numeroDeLetras(roleta);
+
+  String letraNaPosicao(int roleta, int index) => jogo.letraNaPosicao(roleta, index);
+  int qtdeDeLetras() => 2;
+
+  void charadaPosterior() {
+    jogo.charadaPosterior();
+    notifyListeners();
+  }
+
+  void charadaAnterior() {
+    jogo.charadaAnterior();
+    notifyListeners();
+  }
 
   void selecionarLetra({required int coluna, required int indice}) {
-    jogo.tabuleiro.atualizar(coluna, indice);
+    jogo.atualizarTabuleiro(coluna, indice);
+    notifyListeners();
+  }
+
+  void checarTentativa() {
+    if (jogo.conferir) {
+      print('show');
+    } else {}
+    notifyListeners();
   }
 }

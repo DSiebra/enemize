@@ -119,7 +119,7 @@ Essas mudanças marcaram uma das transformações mais importantes da história 
 
 Charada histRegadio = Charada(
   pergunta:
-      'perguCivilizações de (?): organizadas ao longo de grandes rios, dependentes do controle de suas cheias e vazões.nta',
+      'Civilizações de (?): organizadas ao longo de grandes rios, dependentes do controle de suas cheias e vazões.',
   resposta: 'Regadio',
   card: Card(
     titulo: 'Civilizações Hidráulicas',
