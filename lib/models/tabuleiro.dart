@@ -19,4 +19,10 @@ class Tabuleiro {
   String letraNaPosicao(int roleta, int index) => roletas[roleta].letraNaPosicao(index);
 
   void atualizar(int roleta, int letra) => roletas[roleta].atualizar(letra);
+
+  void subtrairLetras() {
+    for (var roleta in roletas) {
+      roleta.subtrairLetra();
+    }
+  }
 }

@@ -20,12 +20,14 @@ class RoletaRBW extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final controller = context.watch<PalavrasGiradasController>();
+
     return SizedBox(
       height: 250,
       width: 40,
       child: WheelPicker(
         itemCount: controller.numeroDeLetras(numeroDaRoleta),
         builder: (context, index) => Badge.count(
+          textColor: Colors.white,
           count: controller.qtdeDeLetras(),
           child: Text(controller.letraNaPosicao(numeroDaRoleta, index)),
         ),

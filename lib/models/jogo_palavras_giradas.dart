@@ -11,7 +11,13 @@ class PalavrasGiradas {
 
   String get tentativaAtual => tabuleiro.tentativaAtual;
 
-  bool get conferir => desafio.conferir(tentativaAtual);
+  bool get conferir {
+    if (desafio.conferir(tentativaAtual)) {
+      tabuleiro.subtrairLetras();
+      return true;
+    }
+    return false;
+  }
 
   int get numeroDeRoletas => tabuleiro.numeroDeRoletas;
 

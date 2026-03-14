@@ -17,5 +17,11 @@ class Charada {
     respostaSemAcentos = resposta.normalizar();
   }
   String respostaSemAcentos = '';
-  bool conferir(String resposta) => respondida = respostaSemAcentos == resposta;
+  bool conferir(String tentativa) {
+    if (tentativa == respostaSemAcentos) {
+      respondida = true;
+      return true;
+    }
+    return false;
+  }
 }
