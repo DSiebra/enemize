@@ -21,7 +21,7 @@ class _RascunhoBWState extends State<RascunhoBW> {
           children: [
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
-              children: List.generate(controller.numeroDeRoletas, (index) => RoletaRBW(numeroDaRoleta: index)),
+              children: List.generate(controller.numeroDeRoletas, (index) => RoletaSemPack(numeroDaRoleta: index)),
             ),
 
             Row(

@@ -4,11 +4,41 @@ import 'package:provider/provider.dart';
 import 'package:wheel_picker/wheel_picker.dart';
 
 class RoletaSemPack extends StatelessWidget {
-  const RoletaSemPack({super.key});
-
+  const RoletaSemPack({super.key, required this.numeroDaRoleta});
+  final int numeroDaRoleta;
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    final controller = context.watch<PalavrasGiradasController>();
+
+    return SizedBox(
+      height: 250,
+      width: 40,
+      child: ListWheelScrollView.useDelegate(
+        physics: const FixedExtentScrollPhysics(),
+        itemExtent: 50,
+        diameterRatio: .8,
+        squeeze: 1.25,
+        useMagnifier: true,
+        magnification: 1.2,
+        onSelectedItemChanged: (index) {
+          controller.selecionarLetra(coluna: numeroDaRoleta, indice: index);
+        },
+        childDelegate: ListWheelChildBuilderDelegate(
+          childCount: null, //controller.numeroDeLetras(numeroDaRoleta),
+          builder: (context, index) {
+            final total = controller.numeroDeLetras(numeroDaRoleta);
+            final realIndex = index % total;
+            return Center(
+              child: Container(
+                padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 4),
+                decoration: BoxDecoration(color: Colors.blue, borderRadius: BorderRadius.circular(6)),
+                child: Text(controller.letraNaPosicao(numeroDaRoleta, realIndex)),
+              ),
+            );
+          },
+        ),
+      ),
+    );
   }
 }
 
@@ -39,7 +69,7 @@ class RoletaRBW extends StatelessWidget {
         style: WheelPickerStyle(
           squeeze: 1.25,
           diameterRatio: .8,
-          surroundingOpacity: .25,
+          surroundingOpacity: 1,
           magnification: 1.2,
           itemExtent: 50,
         ),

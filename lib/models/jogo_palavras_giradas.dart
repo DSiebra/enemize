@@ -29,4 +29,9 @@ class PalavrasGiradas {
   void charadaPosterior() => desafio.charadaPosterior();
 
   void atualizarTabuleiro(int roleta, int letra) => tabuleiro.atualizar(roleta, letra);
+
+  @override
+  String toString() {
+    return tabuleiro.toString();
+  }
 }

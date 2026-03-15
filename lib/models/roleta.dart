@@ -35,4 +35,9 @@ class Roleta {
   void subtrairLetra() {
     letrasNaRoleta.firstWhere((e) => e.letra == letraSelecionada).diminuir();
   }
+
+  @override
+  String toString() {
+    return letrasNaRoleta.join('\n');
+  }
 }

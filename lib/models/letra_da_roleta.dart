@@ -18,4 +18,9 @@ class LetraDaRoleta {
       estado = EstadoDaLetra.zerada;
     }
   }
+
+  @override
+  String toString() {
+    return 'Letra: $letra, Quant: $quantidade, Estado: $estado';
+  }
 }

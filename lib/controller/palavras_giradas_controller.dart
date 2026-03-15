@@ -28,8 +28,11 @@ class PalavrasGiradasController extends ChangeNotifier {
   }
 
   void checarTentativa() {
+    print(jogo.toString());
     if (jogo.conferir) {
       print('show');
+
+      print(jogo.toString());
     } else {}
     notifyListeners();
   }

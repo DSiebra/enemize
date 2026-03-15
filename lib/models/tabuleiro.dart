@@ -25,4 +25,9 @@ class Tabuleiro {
       roleta.subtrairLetra();
     }
   }
+
+  @override
+  String toString() {
+    return roletas.join('\n');
+  }
 }
