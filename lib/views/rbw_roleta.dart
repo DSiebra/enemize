@@ -21,7 +21,10 @@ class RoletaSemPack extends StatelessWidget {
         useMagnifier: true,
         magnification: 1.2,
         onSelectedItemChanged: (index) {
-          controller.selecionarLetra(coluna: numeroDaRoleta, indice: index);
+          final total = controller.numeroDeLetras(numeroDaRoleta);
+          final realIndex = index % total;
+
+          controller.selecionarLetra(coluna: numeroDaRoleta, indice: realIndex);
         },
         childDelegate: ListWheelChildBuilderDelegate(
           childCount: null, //controller.numeroDeLetras(numeroDaRoleta),
@@ -29,10 +32,13 @@ class RoletaSemPack extends StatelessWidget {
             final total = controller.numeroDeLetras(numeroDaRoleta);
             final realIndex = index % total;
             return Center(
-              child: Container(
-                padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 4),
-                decoration: BoxDecoration(color: Colors.blue, borderRadius: BorderRadius.circular(6)),
-                child: Text(controller.letraNaPosicao(numeroDaRoleta, realIndex)),
+              child: Badge.count(
+                count: controller.qtdeDeLetras(numeroDaRoleta, realIndex),
+                child: Container(
+                  padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 4),
+                  decoration: BoxDecoration(color: Colors.transparent, borderRadius: BorderRadius.circular(6)),
+                  child: Text(controller.letraNaPosicao(numeroDaRoleta, realIndex)),
+                ),
               ),
             );
           },
@@ -58,7 +64,7 @@ class RoletaRBW extends StatelessWidget {
         itemCount: controller.numeroDeLetras(numeroDaRoleta),
         builder: (context, index) => Badge.count(
           textColor: Colors.white,
-          count: controller.qtdeDeLetras(),
+          count: 2,
           child: Text(controller.letraNaPosicao(numeroDaRoleta, index)),
         ),
         selectedIndexColor: Colors.black,

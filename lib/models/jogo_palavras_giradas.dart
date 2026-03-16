@@ -24,6 +24,7 @@ class PalavrasGiradas {
   int numeroDeLetras(int roleta) => tabuleiro.numeroDeLetras(roleta);
 
   String letraNaPosicao(int roleta, int index) => tabuleiro.letraNaPosicao(roleta, index);
+  int qtdLetras(int roleta, int index) => tabuleiro.qtdeLetras(roleta, index);
 
   void charadaAnterior() => desafio.charadaAnterior();
   void charadaPosterior() => desafio.charadaPosterior();

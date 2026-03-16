@@ -10,7 +10,7 @@ class PalavrasGiradasController extends ChangeNotifier {
   int numeroDeLetras(int roleta) => jogo.numeroDeLetras(roleta);
 
   String letraNaPosicao(int roleta, int index) => jogo.letraNaPosicao(roleta, index);
-  int qtdeDeLetras() => 2;
+  int qtdeDeLetras(int roleta, int index) => jogo.qtdLetras(roleta, index);
 
   void charadaPosterior() {
     jogo.charadaPosterior();

@@ -5,6 +5,7 @@ class Roleta {
   int index = 0;
   late List<LetraDaRoleta> letrasNaRoleta;
   late List<String> letras;
+
   Roleta(this.listDeLetras) {
     letrasNaRoleta = criarLetrasDoMap();
     letras = letrasMapeadaseListadas();
@@ -29,6 +30,7 @@ class Roleta {
 
   //serve para popular a wheel com todas as letras da lista
   String letraNaPosicao(int index) => letras[index];
+  int qtdeLetras(int index) => letrasNaRoleta[index].quantidade;
 
   void atualizar(int index) => this.index = index;
 

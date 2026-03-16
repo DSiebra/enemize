@@ -17,7 +17,7 @@ class Tabuleiro {
   int numeroDeLetras(int roleta) => roletas[roleta].numeroDeLetras;
 
   String letraNaPosicao(int roleta, int index) => roletas[roleta].letraNaPosicao(index);
-
+  int qtdeLetras(int roleta, int index) => roletas[roleta].qtdeLetras(index);
   void atualizar(int roleta, int letra) => roletas[roleta].atualizar(letra);
 
   void subtrairLetras() {
