@@ -9,14 +9,14 @@ class LetraDaRoleta {
 
   bool get zerado => estado == EstadoDaLetra.zerada;
 
-  void diminuir() {
+  void subtrair() {
     if (quantidade > 0) {
       quantidade--;
     }
-    zerar();
+    _zerar();
   }
 
-  void zerar() {
+  void _zerar() {
     if (quantidade <= 0) {
       estado = EstadoDaLetra.zerada;
     }

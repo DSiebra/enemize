@@ -1,9 +1,9 @@
-import 'package:enemize/models/roleta.dart';
+import 'package:enemize/models/old_roleta.dart';
 
-class Tabuleiro {
+class TabuleiroOld {
   List<String> respostas;
-  late List<Roleta> roletas;
-  Tabuleiro(this.respostas) {
+  late List<OldRoleta> roletas;
+  TabuleiroOld(this.respostas) {
     roletas = gerarRoletas;
   }
 
@@ -11,8 +11,8 @@ class Tabuleiro {
 
   String get tentativaAtual => roletas.map((roleta) => roleta.letraSelecionada).join();
 
-  List<Roleta> get gerarRoletas =>
-      List.generate(numeroDeRoletas, (index) => Roleta(respostas.map((resposta) => resposta[index]).toList()));
+  List<OldRoleta> get gerarRoletas =>
+      List.generate(numeroDeRoletas, (index) => OldRoleta(respostas.map((resposta) => resposta[index]).toList()));
 
   int numeroDeLetras(int roleta) => roletas[roleta].numeroDeLetras;
 

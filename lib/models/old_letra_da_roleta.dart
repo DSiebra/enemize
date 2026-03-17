@@ -1,10 +1,10 @@
 enum EstadoDaLetra { emJogo, zerada }
 
-class LetraDaRoleta {
+class OldLetraDaRoleta {
   String letra;
   int quantidade;
   EstadoDaLetra estado = EstadoDaLetra.emJogo;
-  LetraDaRoleta({required this.letra, required this.quantidade});
+  OldLetraDaRoleta({required this.letra, required this.quantidade});
 
   bool get zerado => estado == EstadoDaLetra.zerada;
 

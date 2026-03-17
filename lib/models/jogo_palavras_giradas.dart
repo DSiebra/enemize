@@ -1,12 +1,12 @@
 import 'package:enemize/models/desafio_do_dia.dart';
-import 'package:enemize/models/tabuleiro.dart';
+import 'package:enemize/models/old_tabuleiro.dart';
 
 class PalavrasGiradas {
   DesafioDoDia desafio;
-  late Tabuleiro tabuleiro;
+  late TabuleiroOld tabuleiro;
 
   PalavrasGiradas({required this.desafio}) {
-    tabuleiro = Tabuleiro(desafio.respostas);
+    tabuleiro = TabuleiroOld(desafio.respostas);
   }
 
   String get tentativaAtual => tabuleiro.tentativaAtual;
