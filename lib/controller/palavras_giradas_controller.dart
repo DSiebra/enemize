@@ -1,38 +1,52 @@
 import 'package:enemize/models/jogo_palavras_giradas.dart';
+import 'package:enemize/palavras_giradas/jogo_pg.dart';
+import 'package:enemize/palavras_giradas/tabuleiro/letra_da_roleta.dart';
 import 'package:flutter/material.dart';
 
 class PalavrasGiradasController extends ChangeNotifier {
-  final PalavrasGiradas jogo;
-  PalavrasGiradasController(this.jogo);
+  final PalavrasGiradas oldJogo;
+  final JogoPG jogo;
 
-  int get numeroDeRoletas => jogo.numeroDeRoletas;
+  PalavrasGiradasController(this.oldJogo, this.jogo);
 
-  int numeroDeLetras(int roleta) => jogo.numeroDeLetras(roleta);
+  //novos controles
 
-  String letraNaPosicao(int roleta, int index) => jogo.letraNaPosicao(roleta, index);
-  int qtdeDeLetras(int roleta, int index) => jogo.qtdLetras(roleta, index);
+  LetraDaRoleta letraNaPosicao(int roleta, int index) => jogo.letraNaPosicao(roleta, index);
+
+  void atualizarTabuleiro(int roleta, int letra) {
+    jogo.atualizarTabuleiro(roleta, letra);
+    notifyListeners();
+  }
+
+  //FIM
+  int get numeroDeRoletas => oldJogo.numeroDeRoletas;
+
+  int numeroDeLetras(int roleta) => oldJogo.numeroDeLetras(roleta);
+
+  String oldletraNaPosicao(int roleta, int index) => oldJogo.letraNaPosicao(roleta, index);
+  int qtdeDeLetras(int roleta, int index) => oldJogo.qtdLetras(roleta, index);
 
   void charadaPosterior() {
-    jogo.charadaPosterior();
+    oldJogo.charadaPosterior();
     notifyListeners();
   }
 
   void charadaAnterior() {
-    jogo.charadaAnterior();
+    oldJogo.charadaAnterior();
     notifyListeners();
   }
 
   void selecionarLetra({required int coluna, required int indice}) {
-    jogo.atualizarTabuleiro(coluna, indice);
+    oldJogo.atualizarTabuleiro(coluna, indice);
     notifyListeners();
   }
 
   void checarTentativa() {
-    print(jogo.toString());
-    if (jogo.conferir) {
+    print(oldJogo.toString());
+    if (oldJogo.conferir) {
       print('show');
 
-      print(jogo.toString());
+      print(oldJogo.toString());
     } else {}
     notifyListeners();
   }

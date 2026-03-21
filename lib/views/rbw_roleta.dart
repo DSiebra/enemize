@@ -1,4 +1,5 @@
 import 'package:enemize/controller/palavras_giradas_controller.dart';
+import 'package:enemize/palavras_giradas/widgets/caixa_roleta_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:wheel_picker/wheel_picker.dart';
@@ -12,7 +13,7 @@ class RoletaSemPack extends StatelessWidget {
 
     return SizedBox(
       height: 250,
-      width: 40,
+      width: 45,
       child: ListWheelScrollView.useDelegate(
         physics: const FixedExtentScrollPhysics(),
         itemExtent: 50,
@@ -31,16 +32,15 @@ class RoletaSemPack extends StatelessWidget {
           builder: (context, index) {
             final total = controller.numeroDeLetras(numeroDaRoleta);
             final realIndex = index % total;
-            return Center(
+            return CaixaDaRoletaWidget(letra: controller.letraNaPosicao(numeroDaRoleta, realIndex)); /* Center(
               child: Badge.count(
                 count: controller.qtdeDeLetras(numeroDaRoleta, realIndex),
                 child: Container(
                   padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 4),
-                  decoration: BoxDecoration(color: Colors.transparent, borderRadius: BorderRadius.circular(6)),
                   child: Text(controller.letraNaPosicao(numeroDaRoleta, realIndex)),
                 ),
               ),
-            );
+            ); */
           },
         ),
       ),
@@ -65,7 +65,7 @@ class RoletaRBW extends StatelessWidget {
         builder: (context, index) => Badge.count(
           textColor: Colors.white,
           count: 2,
-          child: Text(controller.letraNaPosicao(numeroDaRoleta, index)),
+          child: Text(controller.oldletraNaPosicao(numeroDaRoleta, index)),
         ),
         selectedIndexColor: Colors.black,
         looping: true,

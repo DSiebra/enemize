@@ -33,7 +33,7 @@ class _RascunhoBWState extends State<RascunhoBW> {
                   icon: Icon(Icons.keyboard_arrow_left_outlined),
                 ),
                 Flexible(
-                  child: Container(color: Colors.white70, child: Text(controller.jogo.desafio.perguntaAtual)),
+                  child: Container(color: Colors.white70, child: Text(controller.oldJogo.desafio.perguntaAtual)),
                 ),
                 IconButton(
                   onPressed: () {

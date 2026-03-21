@@ -2,7 +2,8 @@ import 'package:enemize/banco_dados.dart';
 import 'package:enemize/models/desafio_do_dia.dart';
 import 'package:enemize/models/jogo_palavras_giradas.dart';
 import 'package:enemize/controller/palavras_giradas_controller.dart';
-import 'package:enemize/views/rascunho_bw.dart';
+import 'package:enemize/palavras_giradas/jogo_pg.dart';
+import 'package:enemize/palavras_giradas/views/palavras_giradas_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -14,7 +15,8 @@ void main() {
           create: (_) {
             final desafio = DesafioDoDia(charadas: bancoDeDados);
             final jogo = PalavrasGiradas(desafio: desafio);
-            return PalavrasGiradasController(jogo);
+            final jogoNovo = JogoPG(desafio);
+            return PalavrasGiradasController(jogo, jogoNovo);
           },
         ),
       ],
@@ -30,7 +32,7 @@ class MainApp extends StatelessWidget {
   Widget build(BuildContext context) {
     //final controller = context.watch<PalavrasGiradasController>();
     return MaterialApp(
-      home: RascunhoBW() /* Scaffold(
+      home: PalavrasGiradasScreen() /* Scaffold(
         backgroundColor: Color(0xfff6f3ec),
         body: SingleChildScrollView(
           child: Column(
