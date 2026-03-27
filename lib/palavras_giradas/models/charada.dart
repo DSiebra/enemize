@@ -1,4 +1,4 @@
-import 'package:enemize/models/card.dart';
+import 'package:enemize/palavras_giradas/models/card.dart';
 import 'package:enemize/utils/string_extension.dart';
 
 class Charada {

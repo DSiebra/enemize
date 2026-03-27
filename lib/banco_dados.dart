@@ -1,5 +1,5 @@
-import 'package:enemize/models/charada.dart';
-import 'package:enemize/models/card.dart';
+import 'package:enemize/palavras_giradas/models/charada.dart';
+import 'package:enemize/palavras_giradas/models/card.dart';
 
 List<Charada> bancoDeDados = [
   geoEquador,

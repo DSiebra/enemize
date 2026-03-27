@@ -1,4 +1,4 @@
-import 'package:enemize/palavras_giradas/tabuleiro/letra_da_roleta.dart';
+import 'package:enemize/palavras_giradas/models/tabuleiro/letra_da_roleta.dart';
 import 'package:flutter/material.dart';
 
 class CaixaDaRoletaWidget extends StatelessWidget {
@@ -13,9 +13,10 @@ class CaixaDaRoletaWidget extends StatelessWidget {
         child: Text(
           letra.letra,
           style: TextStyle(
-            fontSize: 16,
+            fontSize: 24,
             fontWeight: FontWeight.bold,
-            color: letra.zerado ? Colors.green : Colors.black,
+
+            color: letra.zerado ? Color(0xff777B83) : Color(0xff08101F),
           ),
         ),
       ),

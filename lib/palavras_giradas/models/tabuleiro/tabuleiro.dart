@@ -1,5 +1,5 @@
-import 'package:enemize/palavras_giradas/tabuleiro/letra_da_roleta.dart';
-import 'package:enemize/palavras_giradas/tabuleiro/roleta.dart';
+import 'package:enemize/palavras_giradas/models/tabuleiro/letra_da_roleta.dart';
+import 'package:enemize/palavras_giradas/models/tabuleiro/roleta.dart';
 
 class Tabuleiro {
   List<Roleta> roletas;

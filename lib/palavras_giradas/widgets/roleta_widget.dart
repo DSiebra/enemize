@@ -1,4 +1,4 @@
-import 'package:enemize/controller/palavras_giradas_controller.dart';
+import 'package:enemize/palavras_giradas/controller/palavras_giradas_controller.dart';
 import 'package:enemize/palavras_giradas/widgets/caixa_roleta_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -18,15 +18,15 @@ class RoletaWidget extends StatelessWidget {
         itemExtent: 50,
         diameterRatio: 0.8,
         squeeze: 1.25,
-        overAndUnderCenterOpacity: 0.8,
+        overAndUnderCenterOpacity: 0.5,
         onSelectedItemChanged: (index) {
-          final realIndex = index % controller.numeroDeLetras(posicaoDaRoleta);
-          controller.atualizarTabuleiro(posicaoDaRoleta, realIndex);
+          controller.atualizarTabuleiro(posicaoDaRoleta, controller.indexDaLetra(index, posicaoDaRoleta));
         },
         childDelegate: ListWheelChildBuilderDelegate(
           builder: (context, index) {
-            final realIndex = index % controller.numeroDeLetras(posicaoDaRoleta);
-            return CaixaDaRoletaWidget(letra: controller.letraNaPosicao(posicaoDaRoleta, realIndex));
+            return CaixaDaRoletaWidget(
+              letra: controller.letraNaPosicao(posicaoDaRoleta, controller.indexDaLetra(index, posicaoDaRoleta)),
+            );
           },
         ),
       ),

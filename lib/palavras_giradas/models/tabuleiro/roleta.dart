@@ -1,4 +1,4 @@
-import 'package:enemize/palavras_giradas/tabuleiro/letra_da_roleta.dart';
+import 'package:enemize/palavras_giradas/models/tabuleiro/letra_da_roleta.dart';
 
 class Roleta {
   List<LetraDaRoleta> letras;
@@ -30,7 +30,7 @@ class Roleta {
     final result = letrasMapeadas.entries
         .map((letra) => LetraDaRoleta(letra: letra.key, quantidade: letra.value))
         .toList();
-    result.shuffle;
+    result.shuffle();
     return Roleta(letras: result);
   }
 }

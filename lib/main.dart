@@ -1,8 +1,7 @@
 import 'package:enemize/banco_dados.dart';
-import 'package:enemize/models/desafio_do_dia.dart';
-import 'package:enemize/models/jogo_palavras_giradas.dart';
-import 'package:enemize/controller/palavras_giradas_controller.dart';
-import 'package:enemize/palavras_giradas/jogo_pg.dart';
+import 'package:enemize/palavras_giradas/controller/palavras_giradas_controller.dart';
+import 'package:enemize/palavras_giradas/desafio_diario.dart';
+import 'package:enemize/palavras_giradas/models/jogo_pg.dart';
 import 'package:enemize/palavras_giradas/views/palavras_giradas_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -13,10 +12,9 @@ void main() {
       providers: [
         ChangeNotifierProvider(
           create: (_) {
-            final desafio = DesafioDoDia(charadas: bancoDeDados);
-            final jogo = PalavrasGiradas(desafio: desafio);
+            final desafio = DesafioDiario(bancoDeDados);
             final jogoNovo = JogoPG(desafio);
-            return PalavrasGiradasController(jogo, jogoNovo);
+            return PalavrasGiradasController(jogoNovo);
           },
         ),
       ],
