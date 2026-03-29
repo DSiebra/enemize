@@ -1,9 +1,9 @@
-import 'package:enemize/palavras_giradas/models/jogo_pg.dart';
+import 'package:enemize/palavras_giradas/models/jogo_palavras_giradas.dart';
 import 'package:enemize/palavras_giradas/models/tabuleiro/letra_da_roleta.dart';
 import 'package:flutter/material.dart';
 
 class PalavrasGiradasController extends ChangeNotifier {
-  final JogoPG jogo;
+  final JogoPalavrasGiradas jogo;
 
   PalavrasGiradasController(this.jogo);
 
@@ -31,9 +31,12 @@ class PalavrasGiradasController extends ChangeNotifier {
     notifyListeners();
   }
 
-  void checarTentativa() {
+  void conferir() {
     if (jogo.conferir) {
-    } else {}
+      print('resposta correta');
+    } else {
+      print('nop');
+    }
     notifyListeners();
   }
 }

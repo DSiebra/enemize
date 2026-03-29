@@ -1,12 +1,12 @@
-import 'package:enemize/palavras_giradas/desafio_diario.dart';
+import 'package:enemize/palavras_giradas/desafio_do_dia.dart';
 import 'package:enemize/palavras_giradas/models/tabuleiro/letra_da_roleta.dart';
 import 'package:enemize/palavras_giradas/models/tabuleiro/tabuleiro.dart';
 
-class JogoPG {
-  DesafioDiario desafio;
+class JogoPalavrasGiradas {
+  DesafioDoDia desafio;
   late Tabuleiro tabuleiro;
 
-  JogoPG(this.desafio) {
+  JogoPalavrasGiradas(this.desafio) {
     tabuleiro = Tabuleiro.fromRespostas(desafio.respostas);
   }
 

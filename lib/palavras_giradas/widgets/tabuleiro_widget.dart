@@ -9,13 +9,12 @@ class TabuleiroWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final controller = context.watch<PalavrasGiradasController>();
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: [
-        const Icon(Icons.arrow_right, size: 40),
-        ...List.generate(controller.quantidadeDeRoletas, (index) => RoletaWidget(posicaoDaRoleta: index)),
-        const Icon(Icons.arrow_left, size: 40),
-      ],
+    return FittedBox(
+      fit: BoxFit.scaleDown,
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: List.generate(controller.quantidadeDeRoletas, (index) => RoletaWidget(posicaoDaRoleta: index)),
+      ),
     );
   }
 }

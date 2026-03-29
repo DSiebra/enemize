@@ -9,24 +9,26 @@ class PainelDePerguntasWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     final controller = context.watch<PalavrasGiradasController>();
     return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceAround,
       children: [
-        IconButton(
-          onPressed: () {
-            controller.charadaAnterior();
-          },
-          icon: Icon(Icons.keyboard_arrow_left_outlined),
-        ),
-        Flexible(
-          child: Container(
-            color: Colors.white70,
-            child: Text(controller.pergunta, style: TextStyle(fontSize: 16)),
+        Padding(
+          padding: const EdgeInsets.only(left: 12),
+          child: IconButton(
+            iconSize: 32,
+            onPressed: () => controller.charadaAnterior(),
+            icon: const Icon(Icons.keyboard_arrow_left_outlined),
           ),
         ),
-        IconButton(
-          onPressed: () {
-            controller.charadaPosterior();
-          },
-          icon: Icon(Icons.keyboard_arrow_right_outlined),
+        Expanded(
+          child: Text(controller.pergunta, style: const TextStyle(fontSize: 16), textAlign: TextAlign.left),
+        ),
+        Padding(
+          padding: const EdgeInsets.only(right: 12),
+          child: IconButton(
+            iconSize: 32,
+            onPressed: () => controller.charadaPosterior(),
+            icon: const Icon(Icons.keyboard_arrow_right_outlined),
+          ),
         ),
       ],
     );

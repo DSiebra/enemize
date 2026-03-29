@@ -1,10 +1,10 @@
 import 'package:enemize/palavras_giradas/models/card.dart';
 import 'package:enemize/palavras_giradas/models/charada.dart';
 
-class DesafioDiario {
+class DesafioDoDia {
   List<Charada> charadas;
   int index = 0;
-  DesafioDiario(this.charadas);
+  DesafioDoDia(this.charadas);
 
   int get quantidadeDeCharadas => charadas.length;
 
@@ -16,7 +16,12 @@ class DesafioDiario {
 
   List<String> get respostas => charadas.map((charada) => charada.respostaSemAcentos).toList();
 
-  bool conferir(String tentativa) => charada.conferir(tentativa);
+  bool conferir(String tentativa) {
+    if (!charada.respondida) {
+      return charada.conferir(tentativa);
+    }
+    return false;
+  }
 
   void charadaPosterior() {
     if (index >= quantidadeDeCharadas - 1) {

@@ -11,14 +11,14 @@ class RoletaWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     final controller = context.watch<PalavrasGiradasController>();
     return SizedBox(
-      height: 250,
+      height: 350,
       width: 45,
       child: ListWheelScrollView.useDelegate(
         physics: const FixedExtentScrollPhysics(),
         itemExtent: 50,
         diameterRatio: 0.8,
         squeeze: 1.25,
-        overAndUnderCenterOpacity: 0.5,
+        overAndUnderCenterOpacity: 0.4,
         onSelectedItemChanged: (index) {
           controller.atualizarTabuleiro(posicaoDaRoleta, controller.indexDaLetra(index, posicaoDaRoleta));
         },
