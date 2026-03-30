@@ -1,4 +1,4 @@
-import 'package:enemize/palavras_giradas/desafio_do_dia.dart';
+import 'package:enemize/palavras_giradas/models/desafio_do_dia.dart';
 import 'package:enemize/palavras_giradas/models/tabuleiro/letra_da_roleta.dart';
 import 'package:enemize/palavras_giradas/models/tabuleiro/tabuleiro.dart';
 
@@ -28,10 +28,15 @@ class JogoPalavrasGiradas {
   String get pergunta => desafio.pergunta;
 
   bool get conferir {
+    if (tabuleiro.temLetraZerada) {
+      print('letras já utilizadas');
+      return false;
+    }
     if (desafio.conferir(tentativa)) {
       tabuleiro.subtrairLetras();
       return true;
     }
+    print('resposta errada');
     return false;
   }
 }

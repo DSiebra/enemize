@@ -17,7 +17,11 @@ class DesafioDoDia {
   List<String> get respostas => charadas.map((charada) => charada.respostaSemAcentos).toList();
 
   bool conferir(String tentativa) {
+    if (charada.respondida) {
+      print('já foi respondida, mostrar botão do card ao invés do conferir');
+    }
     if (!charada.respondida) {
+      print(tentativa);
       return charada.conferir(tentativa);
     }
     return false;

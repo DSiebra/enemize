@@ -33,10 +33,7 @@ class PalavrasGiradasController extends ChangeNotifier {
 
   void conferir() {
     if (jogo.conferir) {
-      print('resposta correta');
-    } else {
-      print('nop');
-    }
+    } else {}
     notifyListeners();
   }
 }

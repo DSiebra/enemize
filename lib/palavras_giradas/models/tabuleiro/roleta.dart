@@ -8,7 +8,8 @@ class Roleta {
 
   int get quantidadeDeLetrasDaRoleta => letras.length;
 
-  String get letraAtual => letras[index].letra;
+  LetraDaRoleta get letraDaRoletaAtual => letras[index]; //verifica se alguma letra está zerada na tentativa
+  String get letraAtual => letras[index].letra; //forma a tentativa como string, não como instancia de LetraDaRoleta
 
   void atualizar(int index) => this.index = index;
 

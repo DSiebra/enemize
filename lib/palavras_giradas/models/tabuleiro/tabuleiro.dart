@@ -7,6 +7,8 @@ class Tabuleiro {
 
   int quantidadeDeLetrasDaRoleta(int roleta) => roletas[roleta].quantidadeDeLetrasDaRoleta;
 
+  bool get temLetraZerada => roletas.any((roleta) => roleta.letraDaRoletaAtual.zerado);
+
   String get tentativa => roletas.map((roleta) => roleta.letraAtual).join();
 
   int get quantidadeDeRoletas => roletas.length;

@@ -1,6 +1,6 @@
 import 'package:enemize/banco_dados.dart';
 import 'package:enemize/palavras_giradas/controller/palavras_giradas_controller.dart';
-import 'package:enemize/palavras_giradas/desafio_do_dia.dart';
+import 'package:enemize/palavras_giradas/models/desafio_do_dia.dart';
 import 'package:enemize/palavras_giradas/models/jogo_palavras_giradas.dart';
 import 'package:enemize/palavras_giradas/views/palavras_giradas_screen.dart';
 import 'package:flutter/material.dart';
