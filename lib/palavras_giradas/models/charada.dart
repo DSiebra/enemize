@@ -1,10 +1,10 @@
-import 'package:enemize/palavras_giradas/models/card.dart';
+import 'package:enemize/shared/models/card_de_estudo.dart';
 import 'package:enemize/utils/string_extension.dart';
 
 class Charada {
   String pergunta;
   String resposta;
-  Card card;
+  CardDeEstudo card;
   String disciplina;
   bool respondida;
   Charada({

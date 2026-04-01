@@ -1,4 +1,4 @@
-import 'package:enemize/palavras_giradas/models/card.dart';
+import 'package:enemize/shared/models/card_de_estudo.dart';
 import 'package:enemize/palavras_giradas/models/charada.dart';
 
 class DesafioDoDia {
@@ -10,11 +10,13 @@ class DesafioDoDia {
 
   Charada get charada => charadas[index];
 
-  Card get cardDeEstudo => charadas[index].card;
+  CardDeEstudo get cardDeEstudo => charadas[index].card;
 
   String get pergunta => charadas[index].pergunta;
 
   List<String> get respostas => charadas.map((charada) => charada.respostaSemAcentos).toList();
+
+  bool get finalizado => charadas.every((charada) => charada.respondida);
 
   bool conferir(String tentativa) {
     if (charada.respondida) {

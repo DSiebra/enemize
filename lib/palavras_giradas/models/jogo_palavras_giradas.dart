@@ -1,6 +1,7 @@
 import 'package:enemize/palavras_giradas/models/desafio_do_dia.dart';
 import 'package:enemize/palavras_giradas/models/tabuleiro/letra_da_roleta.dart';
 import 'package:enemize/palavras_giradas/models/tabuleiro/tabuleiro.dart';
+import 'package:enemize/palavras_giradas/models/estado_jogo.dart';
 
 class JogoPalavrasGiradas {
   DesafioDoDia desafio;
@@ -27,16 +28,17 @@ class JogoPalavrasGiradas {
 
   String get pergunta => desafio.pergunta;
 
-  bool get conferir {
+  EstadoJogo conferir() {
     if (tabuleiro.temLetraZerada) {
-      print('letras já utilizadas');
-      return false;
+      return EstadoJogo.letraZerada;
     }
     if (desafio.conferir(tentativa)) {
       tabuleiro.subtrairLetras();
-      return true;
+      if (desafio.finalizado) {
+         return EstadoJogo.finalizado;
+      }
+      return EstadoJogo.correto;
     }
-    print('resposta errada');
-    return false;
+    return EstadoJogo.erro;
   }
 }

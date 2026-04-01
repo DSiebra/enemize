@@ -3,6 +3,7 @@ import 'package:enemize/palavras_giradas/controller/palavras_giradas_controller.
 import 'package:enemize/palavras_giradas/models/desafio_do_dia.dart';
 import 'package:enemize/palavras_giradas/models/jogo_palavras_giradas.dart';
 import 'package:enemize/palavras_giradas/views/palavras_giradas_screen.dart';
+import 'package:enemize/cards/controller/colecao_cards_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -10,11 +11,13 @@ void main() {
   runApp(
     MultiProvider(
       providers: [
+        ChangeNotifierProvider(create: (_) => ColecaoCardsController()),
         ChangeNotifierProvider(
-          create: (_) {
+          create: (context) {
+            final colecaoCards = context.read<ColecaoCardsController>();
             final desafio = DesafioDoDia(bancoDeDados);
             final jogoNovo = JogoPalavrasGiradas(desafio);
-            return PalavrasGiradasController(jogoNovo);
+            return PalavrasGiradasController(jogoNovo, colecaoCards);
           },
         ),
       ],

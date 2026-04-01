@@ -1,5 +1,5 @@
 import 'package:enemize/palavras_giradas/models/charada.dart';
-import 'package:enemize/palavras_giradas/models/card.dart';
+import 'package:enemize/shared/models/card_de_estudo.dart';
 
 List<Charada> bancoDeDados = [
   geoEquador,
@@ -18,7 +18,7 @@ Charada geoPeriodo = Charada(
   pergunta: 'Tempo que um planeta leva para completar uma volta ao redor do Sol.',
   resposta: 'Período',
   disciplina: 'Geografia',
-  card: Card(
+  card: CardDeEstudo(
     titulo: 'Translação',
     conteudo: '''Translação é o movimento da Terra ao redor do Sol, responsável pelas estações do ano. 
 O tempo necessário para completar uma órbita recebe o nome de período. 
@@ -31,7 +31,7 @@ O ano bissexto é adotado para corrigir essa diferença, acrescentando um dia ao
 Charada geoRotacao = Charada(
   pergunta: 'Movimento da Terra que a faz girar em torno do seu próprio eixo, com duração de 24 horas.',
   resposta: 'Rotação',
-  card: Card(
+  card: CardDeEstudo(
     titulo: 'Rotação',
     conteudo: '''Rotação é o movimento da Terra em torno de seu próprio eixo, com duração aproximada de 24 horas. 
 É realizada de oeste para leste, o que faz o Sol aparentar nascer no leste e se pôr no oeste. 
@@ -47,7 +47,7 @@ Charada geoInverno = Charada(
   pergunta:
       'Iniciado em dezembro no hemisfério Norte e em junho no Sul, os dias são mais curtos e as noites mais longas.',
   resposta: 'Inverno',
-  card: Card(
+  card: CardDeEstudo(
     titulo: 'Solstício',
     conteudo:
         '''Solstício é o momento em que os raios solares incidem perpendicularmente sobre um dos trópicos, resultando na maior diferença entre a duração do dia e da noite.  
@@ -61,7 +61,7 @@ Em dezembro, ocorre no Trópico de Capricórnio, marcando o início do verão no
 Charada geoEquador = Charada(
   pergunta: 'Linha do (?): divide o planeta nos hemisférios Norte e Sul; principal paralelo, latitude zero.',
   resposta: 'Equador',
-  card: Card(
+  card: CardDeEstudo(
     titulo: 'Linha do Equador',
     conteudo:
         '''Principal paralelo da Terra, corresponde à latitude zero e divide o planeta nos hemisférios Norte e Sul.  
@@ -76,7 +76,7 @@ Outros paralelos importantes delimitam zonas climáticas: os Trópicos de Cânce
 Charada geoLegenda = Charada(
   pergunta: 'Elemento do mapa que explica o significado de cores, símbolos e convenções.',
   resposta: 'Legenda',
-  card: Card(
+  card: CardDeEstudo(
     titulo: 'Elementos Cartográficos',
     conteudo: '''Os elementos cartográficos são componentes que permitem a leitura e a interpretação dos mapas.  
 O título indica o tema ou o assunto representado.  
@@ -91,7 +91,7 @@ A orientação indica as direções, geralmente com a referência do Norte.''',
 Charada histEscrita = Charada(
   pergunta: 'Marca a transição da pré-história, permitindo registro, controle e organização da vida social.',
   resposta: 'Escrita',
-  card: Card(
+  card: CardDeEstudo(
     titulo: 'Pré-história',
     conteudo: '''A pré-história refere-se ao período anterior ao surgimento da escrita, mas não à ausência de história.
 Esse termo hoje é questionado, pois ignora sociedades sem escrita, mas culturalmente complexas. 
@@ -104,7 +104,7 @@ O estudo desse período é feito principalmente pela arqueologia, por meio de ve
 Charada histPlantas = Charada(
   pergunta: 'Domesticação de (?): marcou a Revolução Agrícola, permitiu a sedentarização e uma explosão demográfica.',
   resposta: 'Plantas',
-  card: Card(
+  card: CardDeEstudo(
     titulo: 'Revolução Agrícola',
     conteudo: '''A Revolução Agrícola ocorreu no Neolítico com a domesticação de plantas e animais. 
 Esse processo permitiu a sedentarização humana, com a formação das primeiras aldeias. 
@@ -121,7 +121,7 @@ Charada histRegadio = Charada(
   pergunta:
       'Civilizações de (?): organizadas ao longo de grandes rios, dependentes do controle de suas cheias e vazões.',
   resposta: 'Regadio',
-  card: Card(
+  card: CardDeEstudo(
     titulo: 'Civilizações Hidráulicas',
     conteudo:
         '''As civilizações hidráulicas desenvolveram-se às margens de grandes rios, como o Egito no rio Nilo e a Mesopotâmia entre os rios Tigre e Eufrates.
@@ -136,7 +136,7 @@ A necessidade de organizar obras hidráulicas fortaleceu o poder político e adm
 Charada histEsparta = Charada(
   pergunta: 'Pólis grega marcada pelo militarismo, disciplina rígida e educação voltada para a guerra.',
   resposta: 'Esparta',
-  card: Card(
+  card: CardDeEstudo(
     titulo: 'Esparta',
     conteudo: '''Esparta foi uma cidade-estado localizada na região da Lacônia, na Grécia Antiga. 
 Sua sociedade era fortemente militarizada e valorizava a disciplina e a obediência. 
@@ -152,7 +152,7 @@ Esparta rivalizou com Atenas na Guerra do Peloponeso.''',
 Charada histMedicas = Charada(
   pergunta: 'Guerras (?) entre gregos e persas que marcaram o período clássico da Grécia.',
   resposta: 'Médicas',
-  card: Card(
+  card: CardDeEstudo(
     titulo: 'Guerras Médicas',
     conteudo: '''As Guerras Médicas foram conflitos entre as cidades-Estado gregas e o Império Persa. 
 O nome “médicas” deriva dos medos, povo que integrava o império persa. 
